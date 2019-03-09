@@ -8,7 +8,7 @@ export default (req) => {
     <StaticRouter location={req.path} context={{}}>
       <Routes />
     </StaticRouter>
-  );
+  ); 
 
   return `
   <html>
