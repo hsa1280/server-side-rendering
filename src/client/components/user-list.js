@@ -33,6 +33,10 @@ const mapStateToProps = state => {
   }
 }
 
+export function loadData(store) {
+  return store.dispatch(fetchUsers());
+}
+
 const mapDispatchToProps = dispatch => {
   return {
       fetchUsers: () => {
