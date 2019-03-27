@@ -4,7 +4,7 @@ import { fetchUsers } from '../actions';
 
 class UserList extends Component {
   componentDidMount() {
-    this.props.fetchUsers();
+    // this.props.fetchUsers();
   }
 
   renderUsers() {
@@ -33,7 +33,7 @@ const mapStateToProps = state => {
   }
 }
 
-export function loadData(store) {
+function loadData(store) {
   return store.dispatch(fetchUsers());
 }
 
@@ -45,4 +45,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserList);
+export default {
+  component: connect(mapStateToProps, mapDispatchToProps)(UserList),
+  loadData
+}
